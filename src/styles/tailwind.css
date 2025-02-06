@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+@import 'tailwindcss';
+@import 'tailwindcss-animated';
+@plugin "daisyui";
+
+@theme {
+  --color-white-custom: #f8fafc;
+  --color-yellow-custom: #f5d565;
+  --color-light-beige-custom: #f5e8d5;
+  --color-orange-custom: #e9a23b;
+  --color-light-green-custom: #a0ecb1;
+  --color-green-custom: #32d657;
+  --color-light-pink-custom: #f7d4d3;
+  --color-red-custom: #dd524c;
+  --color-light-gray-custom: #e3e8ef;
+  --color-gray-custom: #97a3b6;
+  --color-blue-custom: #3662e3;
+  --color-black-translucent-custom: #00000033;
+  --color-text-custom: #1a202c;
+}
+
+.dark {
+  --color-white-custom: #1a1a1a;
+  --color-yellow-custom: #d4af37;
+  --color-light-beige-custom: #707070;
+  --color-orange-custom: #ff8c00;
+  --color-light-green-custom: #2e8b57;
+  --color-green-custom: #228b22;
+  --color-light-pink-custom: #ff69b4;
+  --color-red-custom: #b22222;
+  --color-light-gray-custom: #2f4f4f;
+  --color-gray-custom: #696969;
+  --color-blue-custom: #1e90ff;
+  --color-black-translucent-custom: #00000099;
+  --color-text-custom: #f8f8ff;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

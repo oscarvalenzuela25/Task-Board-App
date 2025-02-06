@@ -5,9 +5,7 @@ const useNavbar = () => {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    console.log(savedTheme);
     if (savedTheme && savedTheme === 'dark') {
-      console.log('savedTheme', savedTheme);
       setIsDarkMode(prev => !prev);
     }
   }, []);

@@ -6,7 +6,7 @@ export abstract class TaskBoardRepository {
   abstract getTaskBoardByUuid(
     uuid: string
   ): Promise<TaskBoardModel | undefined>;
-  abstract getTaskBoardBy(
+  abstract getTaskBoarsdBy(
     where: Record<string, ReactNode>
   ): Promise<TaskBoardModel[]>;
   abstract addTaskBoard(payload: TaskBoardModel): Promise<string>;

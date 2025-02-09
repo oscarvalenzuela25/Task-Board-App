@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { DataBase, DexieDB } from '../../../domain/models';
 import { AddTask, TaskModel, UpdateTask } from '../../../domain/models/Tasks';
 
@@ -8,11 +9,11 @@ export class TasksDatasourceIndexedDB {
     this.db = DataBase.getInstance();
   }
 
-  async getTasksByTaskBoardUuid(taskBoardUuid: string): Promise<TaskModel[]> {
-    return (await this.db.tasks.where({ taskBoardUuid }).toArray()).reverse();
+  async getTasksBy(where: Record<string, ReactNode>): Promise<TaskModel[]> {
+    return (await this.db.tasks.where(where).toArray()).reverse();
   }
 
-  async getTasksById(id: number): Promise<TaskModel | undefined> {
+  async getTaskById(id: number): Promise<TaskModel | undefined> {
     return await this.db.tasks.get(id);
   }
 

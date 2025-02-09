@@ -27,11 +27,11 @@ export class TaskBoardRepositoryImp implements TaskBoardRepository {
     return;
   }
 
-  public async getTaskBoardBy(
+  public async getTaskBoarsdBy(
     where: Record<string, ReactNode>
   ): Promise<TaskBoardModel[]> {
     if (envs.DB_PROVIDER === 'INDEXED_DB') {
-      return this.taskBoardDatasourceIndexedDB.getTaskBoardBy(where);
+      return this.taskBoardDatasourceIndexedDB.getTaskBoarsdBy(where);
     }
     return [];
   }

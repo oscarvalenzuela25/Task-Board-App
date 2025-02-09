@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { envs } from '../../../config/envs';
 import { AddTask, TaskModel, UpdateTask } from '../../domain/models/Tasks';
 import { TasksRepository } from '../../domain/repository/TasksRepository';
@@ -10,18 +11,16 @@ export class TasksRepositoryImp implements TasksRepository {
     this.tasksDatasourceIndexedDB = new TasksDatasourceIndexedDB();
   }
 
-  async getTasksByTaskBoardUuid(taskBoardUuid: string): Promise<TaskModel[]> {
+  async getTasksBy(where: Record<string, ReactNode>): Promise<TaskModel[]> {
     if (envs.DB_PROVIDER === 'INDEXED_DB') {
-      return this.tasksDatasourceIndexedDB.getTasksByTaskBoardUuid(
-        taskBoardUuid
-      );
+      return this.tasksDatasourceIndexedDB.getTasksBy(where);
     }
     return [];
   }
 
-  async getTasksById(id: number): Promise<TaskModel | undefined> {
+  async getTaskById(id: number): Promise<TaskModel | undefined> {
     if (envs.DB_PROVIDER === 'INDEXED_DB') {
-      return this.tasksDatasourceIndexedDB.getTasksById(id);
+      return this.tasksDatasourceIndexedDB.getTaskById(id);
     }
     return;
   }

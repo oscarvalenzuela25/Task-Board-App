@@ -8,11 +8,9 @@ export class GetTaskUseCase {
     this.tasksRepositoryImp = new TasksRepositoryImp();
   }
 
-  async execute(taskBoardUuid: string): Promise<TaskModel[]> {
+  async execute(id: number): Promise<TaskModel | undefined> {
     try {
-      return await this.tasksRepositoryImp.getTasksByTaskBoardUuid(
-        taskBoardUuid
-      );
+      return await this.tasksRepositoryImp.getTaskById(id);
     } catch (error) {
       throw new Error(JSON.stringify(error));
     }

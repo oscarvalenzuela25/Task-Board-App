@@ -22,7 +22,7 @@ export class TaskBoardDatasourceIndexedDB {
     return await this.db.taskBoard.get(uuid);
   }
 
-  public async getTaskBoardBy(
+  public async getTaskBoarsdBy(
     where: Record<string, ReactNode>
   ): Promise<TaskBoardModel[]> {
     return await this.db.taskBoard.where(where).toArray();

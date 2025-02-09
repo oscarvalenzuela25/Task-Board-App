@@ -1,8 +1,8 @@
-import { GetTaskUseCase } from '../../../../../../../../API/application/useCases/tasks/GetTaskUseCase';
+import { GetTasksUseCase } from '../../../../../../../../API/application/useCases/tasks/GetTasksUseCase';
 
 const getTasks = async (taskBoardUuid: string) => {
-  const useCase = new GetTaskUseCase();
-  const data = await useCase.execute(taskBoardUuid);
+  const useCase = new GetTasksUseCase();
+  const data = await useCase.execute({ taskBoardUuid });
   return data;
 };
 

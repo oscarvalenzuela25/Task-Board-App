@@ -1,35 +1,55 @@
 import { ReactNode } from 'react';
-import { DataBase } from '../../domain/models';
 import { TaskBoardModel, UpdateTaskBoard } from '../../domain/models/TaskBoard';
 import { TaskBoardRepository } from '../../domain/repository/TaskBoardRepository';
+import { TaskBoardDatasourceIndexedDB } from '../datasource/indexedDB/TaskBoardDatasourceIndexedDB';
+import { envs } from '../../../config/envs';
 
 export class TaskBoardRepositoryImp implements TaskBoardRepository {
-  private db;
+  private taskBoardDatasourceIndexedDB: TaskBoardDatasourceIndexedDB;
 
   constructor() {
-    this.db = DataBase.getInstance();
+    this.taskBoardDatasourceIndexedDB = new TaskBoardDatasourceIndexedDB();
+  }
+
+  public async getTaskBoards(): Promise<TaskBoardModel[]> {
+    if (envs.DB_PROVIDER === 'INDEXED_DB') {
+      return this.taskBoardDatasourceIndexedDB.getTaskBoards();
+    }
+    return [];
   }
 
   public async getTaskBoardByUuid(
     uuid: string
   ): Promise<TaskBoardModel | undefined> {
-    return await this.db.taskBoard.get(uuid);
+    if (envs.DB_PROVIDER === 'INDEXED_DB') {
+      return this.taskBoardDatasourceIndexedDB.getTaskBoardByUuid(uuid);
+    }
+    return;
   }
 
   public async getTaskBoardBy(
     where: Record<string, ReactNode>
   ): Promise<TaskBoardModel[]> {
-    return await this.db.taskBoard.where(where).toArray();
+    if (envs.DB_PROVIDER === 'INDEXED_DB') {
+      return this.taskBoardDatasourceIndexedDB.getTaskBoardBy(where);
+    }
+    return [];
   }
 
   public async addTaskBoard(payload: TaskBoardModel): Promise<string> {
-    return await this.db.taskBoard.add(payload);
+    if (envs.DB_PROVIDER === 'INDEXED_DB') {
+      return this.taskBoardDatasourceIndexedDB.addTaskBoard(payload);
+    }
+    return '';
   }
 
   public async updateTaskBoardBy(
     uuid: string,
     payload: UpdateTaskBoard
   ): Promise<number> {
-    return await this.db.taskBoard.update(uuid, payload);
+    if (envs.DB_PROVIDER === 'INDEXED_DB') {
+      return this.taskBoardDatasourceIndexedDB.updateTaskBoardBy(uuid, payload);
+    }
+    return 0;
   }
 }

@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { TaskBoardModel, UpdateTaskBoard } from '../models/TaskBoard';
 
 export abstract class TaskBoardRepository {
+  abstract getTaskBoards(): Promise<TaskBoardModel[]>;
   abstract getTaskBoardByUuid(
     uuid: string
   ): Promise<TaskBoardModel | undefined>;

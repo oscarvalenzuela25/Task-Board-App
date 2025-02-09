@@ -22,6 +22,10 @@ const useUpdateTaskBoard = () => {
         queryKey: ['getTaskBoard'],
         exact: false,
       });
+      queryClient.invalidateQueries({
+        queryKey: ['getTaskBoards'],
+        exact: false,
+      });
       variables.callback();
       toast.success('Task title updated successfully');
     },

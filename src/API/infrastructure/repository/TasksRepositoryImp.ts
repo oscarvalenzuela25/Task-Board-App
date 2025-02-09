@@ -1,31 +1,49 @@
-import { DataBase, DexieDB } from '../../domain/models';
+import { envs } from '../../../config/envs';
 import { AddTask, TaskModel, UpdateTask } from '../../domain/models/Tasks';
 import { TasksRepository } from '../../domain/repository/TasksRepository';
+import { TasksDatasourceIndexedDB } from '../datasource/indexedDB/TasksDatasourceIndexedDB';
 
 export class TasksRepositoryImp implements TasksRepository {
-  private db: DexieDB;
+  private tasksDatasourceIndexedDB: TasksDatasourceIndexedDB;
 
   constructor() {
-    this.db = DataBase.getInstance();
+    this.tasksDatasourceIndexedDB = new TasksDatasourceIndexedDB();
   }
 
   async getTasksByTaskBoardUuid(taskBoardUuid: string): Promise<TaskModel[]> {
-    return (await this.db.tasks.where({ taskBoardUuid }).toArray()).reverse();
+    if (envs.DB_PROVIDER === 'INDEXED_DB') {
+      return this.tasksDatasourceIndexedDB.getTasksByTaskBoardUuid(
+        taskBoardUuid
+      );
+    }
+    return [];
   }
 
   async getTasksById(id: number): Promise<TaskModel | undefined> {
-    return await this.db.tasks.get(id);
+    if (envs.DB_PROVIDER === 'INDEXED_DB') {
+      return this.tasksDatasourceIndexedDB.getTasksById(id);
+    }
+    return;
   }
 
   async addTask(payload: AddTask): Promise<number> {
-    return await this.db.tasks.add(payload);
+    if (envs.DB_PROVIDER === 'INDEXED_DB') {
+      return this.tasksDatasourceIndexedDB.addTask(payload);
+    }
+    return 0;
   }
 
   async updateTaskById(id: number, payload: UpdateTask): Promise<number> {
-    return await this.db.tasks.update(id, payload);
+    if (envs.DB_PROVIDER === 'INDEXED_DB') {
+      return this.tasksDatasourceIndexedDB.updateTaskById(id, payload);
+    }
+    return 0;
   }
 
   async deleteTaskById(id: number): Promise<void> {
-    return await this.db.tasks.delete(id);
+    if (envs.DB_PROVIDER === 'INDEXED_DB') {
+      return this.tasksDatasourceIndexedDB.deleteTaskById(id);
+    }
+    return;
   }
 }

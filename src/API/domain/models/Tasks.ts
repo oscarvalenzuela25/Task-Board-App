@@ -9,6 +9,7 @@ export type TaskModel = {
   content: string;
   emoji: string;
   status: Status;
+  createdAt?: Date;
 };
 
 export type AddTask = {
@@ -17,6 +18,7 @@ export type AddTask = {
   content: string;
   emoji: string;
   status: Status;
+  createdAt?: Date;
 };
 
 export type UpdateTask = {

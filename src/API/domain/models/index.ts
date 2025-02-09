@@ -12,11 +12,11 @@ export class DataBase {
 
   public static getInstance(): DexieDB {
     if (!DataBase.instance) {
-      DataBase.instance = new Dexie('TaskDB') as DexieDB;
+      DataBase.instance = new Dexie('TaskDB_v1') as DexieDB;
 
       DataBase.instance.version(1).stores({
-        taskBoard: '++uuid, title',
-        tasks: '++id, taskBoardUuid, title, content, emoji, status',
+        taskBoard: '++uuid, title, createdAt',
+        tasks: '++id, taskBoardUuid, title, content, emoji, status, createdAt',
       });
     }
     return DataBase.instance;

@@ -9,6 +9,7 @@ const createNewTaskBoard = async (uuid: string) => {
   await addTaskBoardUseCase.execute({
     uuid,
     title: 'My New Task Board',
+    createdAt: new Date(),
   });
 };
 

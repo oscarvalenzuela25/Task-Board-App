@@ -62,6 +62,7 @@ const useHomeBody = () => {
         content: taskSelected.content,
         emoji: taskSelected.emoji,
         status: taskSelected.status,
+        createdAt: new Date(),
       },
       callback: handleCloseManageTaskModal,
     });

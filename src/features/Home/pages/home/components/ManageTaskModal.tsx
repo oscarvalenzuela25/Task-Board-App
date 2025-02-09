@@ -130,7 +130,7 @@ const ManageTaskModal: FC<Props> = ({
           </div>
         </div>
 
-        <div className="flex justify-end gap-4 mt-30">
+        <div className="flex justify-end gap-4 mt-20">
           {manageMode === 'UPDATE' && (
             <Button
               variant="delete"

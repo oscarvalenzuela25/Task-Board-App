@@ -2,6 +2,7 @@ import { useState } from 'react';
 import useUpdateTaskBoard from '../infrastructure/hooks/useUpdateTaskBoard';
 import { useParams } from 'wouter';
 import useGetTaskBoard from '../infrastructure/hooks/useGetTaskBoard';
+import { Texts } from './../../../../../../../utils/Texts';
 
 const useHomeTitle = () => {
   const { uuid = '' } = useParams();
@@ -24,7 +25,7 @@ const useHomeTitle = () => {
   const handleUpdateTitle = () => {
     handleUpdateTaskBoard({
       uuid,
-      payload: { title: newTitle },
+      payload: { title: Texts.cleanText(newTitle) },
       callback: () => setUpdateMode(false),
     });
   };
@@ -36,7 +37,7 @@ const useHomeTitle = () => {
   };
 
   const validations = {
-    isError: !newTitle || newTitle?.length > 25,
+    isError: !newTitle || newTitle?.trim().length > 25,
     requestLoading: fetchTaskBoardIsFetching || handleUpdateTaskBoardIsLoading,
   };
 

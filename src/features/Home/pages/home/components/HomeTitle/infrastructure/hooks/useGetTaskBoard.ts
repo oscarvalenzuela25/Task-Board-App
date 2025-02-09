@@ -11,10 +11,7 @@ const useGetTaskBoard = (uuid: string) => {
   } = useQuery({
     queryKey: ['getTaskBoard', uuid],
     queryFn: () => getTaskBoard(uuid),
-    retry: false,
     enabled: !!uuid,
-    refetchOnMount: false,
-    staleTime: 0,
   });
 
   return {

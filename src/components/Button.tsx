@@ -4,9 +4,21 @@ import { cva } from 'class-variance-authority';
 import Spinner from './Spinner';
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
+  /**
+   * The variant of the button
+   */
   variant?: 'primary' | 'delete' | 'gray';
+  /**
+   * The loading state of the button
+   */
   isLoading?: boolean;
+  /**
+   * The start icon of the button
+   */
   startIcon?: React.ReactNode;
+  /**
+   * The end icon of the button
+   */
   endIcon?: React.ReactNode;
 };
 

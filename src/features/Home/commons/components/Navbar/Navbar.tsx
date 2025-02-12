@@ -4,7 +4,7 @@ import LinkedinIcon from '../../../../../icons/LinkedinIcon';
 import IconButton from '../../../../../components/IconButton';
 import GithubIcon from '../../../../../icons/GithubIcon';
 import { SocialMedia } from '../../../../../config/socialMedia';
-import OptionDrawer from '../OptionsDrawer/OptionDrawer';
+import OptionDrawer from '../OptionDrawer';
 import MenuIcon from '../../../../../icons/MenuIcon';
 import ThemeController from '../ThemeController';
 // import PortfolioIcon from '../../../../../icons/PortfolioIcon';

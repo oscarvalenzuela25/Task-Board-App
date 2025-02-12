@@ -5,21 +5,22 @@ import { fn } from '@storybook/test';
 const meta: Meta<typeof BaseDrawer> = {
   title: 'Base/BaseDrawer',
   component: BaseDrawer,
+  render: args => (
+    <div className="w-full h-[250px]">
+      <BaseDrawer {...args}>
+        <div className="flex justify-center w-[300px] min-h-full bg-white-custom p-5">
+          <h1 className="text-text-custom">Hello World</h1>
+        </div>
+      </BaseDrawer>
+    </div>
+  ),
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {
     isOpen: {
       control: 'boolean',
-    },
-    children: {
-      control: 'select',
-      options: ['HelloWorl', 'GoodbyeWorld'],
-      mapping: {
-        HelloWorld: <h1>Hello World</h1>,
-        GoodbyeWorld: <h1>Goodbye World</h1>,
-      },
     },
   },
   args: {
@@ -33,14 +34,12 @@ type Story = StoryObj<typeof meta>;
 export const Base: Story = {
   args: {
     isOpen: true,
-    children: <h1>Hello World</h1>,
   },
 };
 
 export const Close: Story = {
   args: {
     isOpen: false,
-    children: <h1>Goodbye World</h1>,
   },
 };
 

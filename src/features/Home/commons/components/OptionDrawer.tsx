@@ -3,7 +3,7 @@ import BaseDrawer from '../../../../components/BaseDrawer';
 import AddIcon from '../../../../icons/AddIcon';
 import { Texts } from '../../../../utils/Texts';
 import { TaskBoardModel } from '../../../../API/domain/models/TaskBoard';
-import logo from '../../../../../assets/logo.svg';
+import logo from '../../../../assets/logo.svg';
 
 type Props = {
   isOpen: boolean;

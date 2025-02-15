@@ -52,7 +52,7 @@ const StatusInput: FC<Props> = ({
     >
       <div className="flex items-center gap-3">
         <StatusTask status={status} />
-        <p className="text-[16px]">{statusLabel[status]}</p>
+        <p className="text-[16px] text-text-custom">{statusLabel[status]}</p>
       </div>
 
       {isSelected && <CheckCircleIcon className="fill-blue-custom" />}

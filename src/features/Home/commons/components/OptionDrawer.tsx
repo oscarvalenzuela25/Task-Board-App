@@ -26,7 +26,7 @@ const OptionDrawer: FC<Props> = ({
         <div className="flex items-center gap-3">
           <img src={logo} alt="logo" />
           <p className="text-text-custom text-[20px] font-medium">
-            My Task Bard App
+            My Task Board App
           </p>
         </div>
         <div
@@ -34,7 +34,7 @@ const OptionDrawer: FC<Props> = ({
           className="flex items-center w-full gap-2 cursor-pointer trasition duration-500 hover:bg-black-translucent-custom rounded-lg p-3"
         >
           <AddIcon className="stroke-text-custom fill-text-custom" />
-          <p className="text-text-custom text-[16px]">New Task Board</p>
+          <p className="text-text-custom text-[16px]">New Board</p>
         </div>
 
         <div className="flex flex-col">

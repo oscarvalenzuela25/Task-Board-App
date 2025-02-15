@@ -3,11 +3,11 @@ import SunIcon from '../../../../icons/SunIcon';
 import MoonIcon from '../../../../icons/MoonIcon';
 
 type Props = {
-  handleThemeSwitch: () => void;
   isDarkMode: boolean;
+  handleThemeSwitch: () => void;
 };
 
-const ThemeController: FC<Props> = ({ handleThemeSwitch, isDarkMode }) => {
+const ThemeController: FC<Props> = ({ isDarkMode, handleThemeSwitch }) => {
   return (
     <label className="swap swap-rotate">
       <input

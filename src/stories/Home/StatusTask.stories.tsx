@@ -1,17 +1,17 @@
-import { Meta, StoryObj } from '@storybook/react';
-import StatusTask from '../../features/Home/commons/components/StatusTask';
+import { Meta, StoryObj } from "@storybook/react";
+import StatusTask from "../../features/home/components/StatusTask";
 
 const meta: Meta<typeof StatusTask> = {
-  title: 'Home/StatusTask',
+  title: "Home/StatusTask",
   component: StatusTask,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     status: {
-      control: 'select',
-      options: ['DEFAULT', 'IN_PROGRESS', 'DONE', 'CANCELLED', 'ADD'],
+      control: "select",
+      options: ["DEFAULT", "IN_PROGRESS", "DONE", "CANCELLED", "ADD"],
     },
   },
   args: {},
@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Base: Story = {
   args: {
-    status: 'DEFAULT',
+    status: "DEFAULT",
   },
 };
 

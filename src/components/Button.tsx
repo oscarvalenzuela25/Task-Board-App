@@ -1,13 +1,13 @@
-import React, { ButtonHTMLAttributes, FC } from 'react';
-import { TailwindUtils } from '../utils/TailwindUtils';
-import { cva } from 'class-variance-authority';
-import Spinner from './Spinner';
+import React, { ButtonHTMLAttributes, FC } from "react";
+import { TailwindUtils } from "../utils/TailwindUtils";
+import { cva } from "class-variance-authority";
+import Spinner from "./Spinner";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   /**
    * The variant of the button
    */
-  variant?: 'primary' | 'delete' | 'gray';
+  variant?: "primary" | "delete" | "gray";
   /**
    * The loading state of the button
    */
@@ -23,43 +23,43 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const buttonVariants = cva(
-  'flex justify-center items-center gap-1  px-6 py-2 rounded-full min-w-[110px] cursor-pointer text-[12px] font-medium focus:outline-none',
+  "flex justify-center items-center gap-1 px-6 py-2 rounded-full min-w-[110px] cursor-pointer text-[14px] font-medium focus:outline-none",
   {
     variants: {
       variant: {
         primary:
-          'bg-blue-custom text-white-custom hover:bg-blue-custom/85 focus:bg-blue-custom/85',
-        gray: 'bg-gray-custom text-white-custom hover:bg-gray-custom/85 focus:bg-gray-custom/85',
+          "bg-blue-custom text-white-custom hover:bg-blue-custom/85 focus:bg-blue-custom/85",
+        gray: "bg-gray-custom text-white-custom hover:bg-gray-custom/85 focus:bg-gray-custom/85",
         delete:
-          'bg-red-custom text-white-custom hover:bg-red-custom/85 focus:bg-red-custom/85',
+          "bg-red-custom text-white-custom hover:bg-red-custom/85 focus:bg-red-custom/85",
       },
       isLoading: {
-        true: '',
-        false: '',
+        true: "",
+        false: "",
       },
       isDisabled: {
-        true: 'opacity-50 cursor-not-allowed',
-        false: '',
+        true: "opacity-50 cursor-not-allowed",
+        false: "",
       },
     },
     defaultVariants: {
-      variant: 'primary',
+      variant: "primary",
     },
     compoundVariants: [
       {
-        variant: 'primary',
+        variant: "primary",
         isLoading: true,
-        className: 'bg-blue-custom/85 text-white-custom/85',
+        className: "bg-blue-custom/85 text-white-custom/85",
       },
       {
-        variant: 'gray',
+        variant: "gray",
         isLoading: true,
-        className: 'bg-gray-custom/85 text-white-custom/85',
+        className: "bg-gray-custom/85 text-white-custom/85",
       },
       {
-        variant: 'delete',
+        variant: "delete",
         isLoading: true,
-        className: 'bg-red-custom/85 text-white-custom/85',
+        className: "bg-red-custom/85 text-white-custom/85",
       },
     ],
   }

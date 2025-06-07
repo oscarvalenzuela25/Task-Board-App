@@ -1,8 +1,8 @@
-import { Meta, StoryObj } from '@storybook/react';
-import CardSkeleton from '../../features/Home/commons/components/CardSkeleton';
+import { Meta, StoryObj } from "@storybook/react";
+import CardSkeleton from "../../features/home/components/CardSkeleton";
 
 const meta: Meta<typeof CardSkeleton> = {
-  title: 'Home/CardSkeleton',
+  title: "Home/CardSkeleton",
   component: CardSkeleton,
   render: ({ isLoading, children }) => (
     <div className="w-96">
@@ -10,14 +10,14 @@ const meta: Meta<typeof CardSkeleton> = {
     </div>
   ),
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
-    isLoading: { control: 'boolean' },
+    isLoading: { control: "boolean" },
     children: {
-      control: 'select',
-      options: ['HelloWorld', 'HolaMundo'],
+      control: "select",
+      options: ["HelloWorld", "HolaMundo"],
       mapping: {
         HelloWorld: <h1 className="text-text-custom">Hello World</h1>,
         HolaMundo: <h1 className="text-text-custom">Hola Mundo</h1>,

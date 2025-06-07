@@ -1,20 +1,20 @@
-import { Meta, StoryObj } from '@storybook/react';
-import EmojiTask from '../../features/Home/commons/components/EmojiTask';
+import { Meta, StoryObj } from "@storybook/react";
+import EmojiTask from "../../features/home/components/EmojiTask";
 
 const meta: Meta<typeof EmojiTask> = {
-  title: 'Home/EmojiTask',
+  title: "Home/EmojiTask",
   component: EmojiTask,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     emoji: {
-      control: 'select',
-      options: ['👨‍💻', '💬', '☕', '🏋️', '📚'],
+      control: "select",
+      options: ["👨‍💻", "💬", "☕", "🏋️", "📚"],
       mapping: {
-        '👨‍💻': 'personWithNotebook',
-        '💬': 'commentBalloon',
-        '☕': 'coffeeCup',
-        '🏋️': 'weightLifter',
-        '📚': 'stackOfBooks',
+        "👨‍💻": "personWithNotebook",
+        "💬": "commentBalloon",
+        "☕": "coffeeCup",
+        "🏋️": "weightLifter",
+        "📚": "stackOfBooks",
       },
     },
   },
@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Base: Story = {
   args: {
-    emoji: 'personWithNotebook',
+    emoji: "personWithNotebook",
   },
 };
 

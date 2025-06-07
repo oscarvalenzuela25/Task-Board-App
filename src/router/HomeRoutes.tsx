@@ -1,7 +1,7 @@
-import { FC } from 'react';
-import { Route } from 'wouter';
-import Home from '../features/Home/pages/home';
-import verifyParams from './HOC/verifyParams';
+import { FC } from "react";
+import { Route } from "wouter";
+import Home from "../features/home/pages/mainPage";
+import verifyParams from "./HOC/verifyParams";
 
 const HomeRoutes: FC = () => {
   return (

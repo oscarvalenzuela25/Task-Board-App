@@ -1,28 +1,31 @@
-import { FC } from 'react';
+import type { FC, SVGProps } from "react";
 
-type Props = {
-  width?: number;
-  height?: number;
-  className?: string;
+type Props = SVGProps<SVGSVGElement> & {
+  url?: string;
 };
 
-const PortfolioIcon: FC<Props> = ({ width, height, className }) => {
+const PortfolioIcon: FC<Props> = ({ url, ...props }) => {
   return (
     <svg
-      width={width || 24}
-      height={height || 24}
-      className={className}
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      className={
+        "stroke-text-custom cursor-pointer transition-transform transition-colors duration-200 ease-in-out hover:scale-110 hover:text-custom focus:scale-110 focus:text-custom active:scale-95"
+      }
+      onClick={() => window.open(url, "_blank")}
+      {...props}
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-      <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-      <path d="M11 12.5a1.5 1.5 0 0 0 -3 0v3a1.5 1.5 0 0 0 3 0" />
-      <path d="M13 11l1.5 6l1.5 -6" />
+      <path d="M3 12l3 3l3 -3l-3 -3z" />
+      <path d="M15 12l3 3l3 -3l-3 -3z" />
+      <path d="M9 6l3 3l3 -3l-3 -3z" />
+      <path d="M9 18l3 3l3 -3l-3 -3z" />
     </svg>
   );
 };

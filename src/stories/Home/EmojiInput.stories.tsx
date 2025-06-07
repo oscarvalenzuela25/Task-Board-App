@@ -1,33 +1,33 @@
-import { Meta, StoryObj } from '@storybook/react';
-import EmojiInput from '../../features/Home/commons/components/EmojiInput';
-import { fn } from '@storybook/test';
+import { Meta, StoryObj } from "@storybook/react";
+import EmojiInput from "../../features/home/components/EmojiInput";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof EmojiInput> = {
-  title: 'Home/EmojiInput',
+  title: "Home/EmojiInput",
   component: EmojiInput,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     emoji: {
-      control: 'select',
-      options: ['👨‍💻', '💬', '☕', '🏋️'],
+      control: "select",
+      options: ["👨‍💻", "💬", "☕", "🏋️"],
       mapping: {
-        '👨‍💻': 'personWithNotebook',
-        '💬': 'commentBalloon',
-        '☕': 'coffeeCup',
-        '🏋️': 'weightLifter',
+        "👨‍💻": "personWithNotebook",
+        "💬": "commentBalloon",
+        "☕": "coffeeCup",
+        "🏋️": "weightLifter",
       },
     },
     emojiSelected: {
-      control: 'select',
-      options: ['👨‍💻', '💬', '☕', '🏋️'],
+      control: "select",
+      options: ["👨‍💻", "💬", "☕", "🏋️"],
       mapping: {
-        '👨‍💻': 'personWithNotebook',
-        '💬': 'commentBalloon',
-        '☕': 'coffeeCup',
-        '🏋️': 'weightLifter',
+        "👨‍💻": "personWithNotebook",
+        "💬": "commentBalloon",
+        "☕": "coffeeCup",
+        "🏋️": "weightLifter",
       },
     },
   },
@@ -40,15 +40,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Base: Story = {
   args: {
-    emoji: 'personWithNotebook',
+    emoji: "personWithNotebook",
     emojiSelected: null,
   },
 };
 
 export const Selected: Story = {
   args: {
-    emoji: 'personWithNotebook',
-    emojiSelected: 'personWithNotebook',
+    emoji: "personWithNotebook",
+    emojiSelected: "personWithNotebook",
   },
 };
 

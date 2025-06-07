@@ -1,18 +1,18 @@
-import { Meta, StoryObj } from '@storybook/react';
-import OptionDrawer from './../../features/Home/commons/components/OptionDrawer';
-import { fn } from '@storybook/test';
+import { Meta, StoryObj } from "@storybook/react";
+import OptionDrawer from "../../features/home/components/OptionDrawer";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof OptionDrawer> = {
-  title: 'Home/OptionDrawer',
+  title: "Home/OptionDrawer",
   component: OptionDrawer,
-  render: props => (
+  render: (props) => (
     <div className="w-96 h-[400px]">
       <OptionDrawer {...props} />
     </div>
   ),
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
-    isOpen: { control: 'boolean' },
+    isOpen: { control: "boolean" },
   },
   args: {
     handleGoToTaskBoard: fn(),
@@ -28,8 +28,8 @@ export const Base: Story = {
     isOpen: true,
     taskBoards: [
       {
-        uuid: '1',
-        title: 'Task Board 1',
+        uuid: "1",
+        title: "Task Board 1",
       },
     ],
   },

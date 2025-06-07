@@ -1,11 +1,11 @@
-import { Meta, StoryObj } from '@storybook/react';
-import Navbar from '../../features/Home/commons/components/Navbar';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Meta, StoryObj } from "@storybook/react";
+import Navbar from "../../features/home/components/Navbar";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
 
 const meta: Meta<typeof Navbar> = {
-  title: 'Home/Navbar',
+  title: "Home/Navbar",
   component: Navbar,
   render: () => (
     <QueryClientProvider client={queryClient}>
@@ -15,9 +15,9 @@ const meta: Meta<typeof Navbar> = {
     </QueryClientProvider>
   ),
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {},
 };

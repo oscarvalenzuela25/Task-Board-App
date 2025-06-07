@@ -1,16 +1,16 @@
-import { Meta, StoryObj } from '@storybook/react';
-import TitleSkeleton from '../../features/Home/commons/components/TitleSkeleton';
+import { Meta, StoryObj } from "@storybook/react";
+import TitleSkeleton from "../../features/home/components/TitleSkeleton";
 
 const meta: Meta<typeof TitleSkeleton> = {
-  title: 'Home/TitleSkeleton',
+  title: "Home/TitleSkeleton",
   component: TitleSkeleton,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     isLoading: {
-      control: 'boolean',
+      control: "boolean",
     },
   },
   args: {

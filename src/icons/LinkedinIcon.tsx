@@ -1,22 +1,24 @@
-import { FC } from 'react';
+import { FC, SVGProps } from "react";
 
-type Props = {
-  width?: number;
-  height?: number;
-  className?: string;
+type Props = SVGProps<SVGSVGElement> & {
+  url?: string;
 };
 
-const LinkedinIcon: FC<Props> = ({ width, height, className }) => {
+const LinkedinIcon: FC<Props> = ({ url, ...props }) => {
   return (
     <svg
-      width={width || 24}
-      height={height || 24}
-      className={className}
+      width={24}
+      height={24}
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      className={
+        "stroke-text-custom cursor-pointer transition-transform transition-colors duration-200 ease-in-out hover:scale-110 hover:text-custom focus:scale-110 focus:text-custom active:scale-95"
+      }
+      onClick={() => window.open(url, "_blank")}
+      {...props}
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M8 11v5" />
